@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 
 /**
  * Created by wuzh on 2019/10/21.
- * Describe：
+ * Describe：HashMap，TreeMap，自定义MapKey类(需重写equals和hashCode方法)
  */
 public class MapTest {
     public static void main(String[] args) {

@@ -5,6 +5,10 @@ import java.util.*;
 /**
  * Created by wuzh on 2019/10/21.
  * Describe：ArrayList和Vector
+ * 为什么数组长度的最大值是MAX_ARRAY_SIZE = Integer.MAX_VALUE - 8
+ * 数组作为一个对象，需要一定的内存存储对象头信息，对象头信息最大占用内存不可超过8字节。
+ * 在hotspot虚拟机中，对象在内存的分布分为3个部分，对象头，实例数据，和对齐填充。
+ * 对象头包括两部分：Mark Word 和 类型指针。均为 4 字节
  */
 public class ListTest {
 
