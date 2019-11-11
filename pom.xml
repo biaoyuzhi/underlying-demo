@@ -7,6 +7,8 @@
     <groupId>com.example</groupId>
     <artifactId>underlying-demo</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <!--不论是jar还是war包，都直接使用maven的package命令-->
+    <packaging>war</packaging>
 
     <!--该配置指定使用jdk1.8-->
     <properties>
@@ -47,6 +49,8 @@
     </dependencies>
 
     <build>
+        <!--指定最后打包文件的名称-->
+        <finalName>under</finalName>
         <plugins>
             <!--Speedment提供了一个Maven插件，可以用它连接数据库，并通过配置，自动生成项目代码-->
             <plugin>
