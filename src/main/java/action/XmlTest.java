@@ -106,10 +106,12 @@ class DigesterRule {
 //        digester.addBeanPropertySetter("school/classes/class/man/name");
 //        digester.addBeanPropertySetter("school/classes/class/man/age");
 //        digester.addBeanPropertySetter("school/classes/class/man/message");
-        //2、将标签中的键值对映射为对象的属性
-        digester.addSetProperties("school/classes/class/man","name","name");    //第2个参数为标签中的键值对名，第3个参数为对象中的属性名
-        digester.addSetProperties("school/classes/class/man","age","age");
-        digester.addSetProperties("school/classes/class/man","message","message");
+        //2.1、将标签中的键值对映射为对象的属性
+//        digester.addSetProperties("school/classes/class/man","name","name");    //第2个参数为标签中的键值对名，第3个参数为对象中的属性名
+//        digester.addSetProperties("school/classes/class/man","age","age");
+//        digester.addSetProperties("school/classes/class/man","message","message");
+        //2.2、如果键值对名与属性名称是一致的，可以直接使用下面一条语句
+        digester.addSetProperties("school/classes/class/man");
         //创建对象之间的关系。将后面一个对象作为参数传入前面一个对象的某个方法时，可以调用addSetNext方法来指定这个对象之间的关系
 //        digester.addSetNext("school/classes/class/man","addMan"); //即将man对象作为参数添加进class对象的addMan()方法中
         URL url = this.getClass().getClassLoader().getResource(filePath);
