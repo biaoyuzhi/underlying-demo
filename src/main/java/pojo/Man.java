@@ -4,7 +4,7 @@ package pojo;
  * Created by wuzh on 2019/10/8.
  * Describe：
  */
-public class Person {
+public class Man {
     private String name;
     private int age;
     private String message;
@@ -35,7 +35,7 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
+        return "Man{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
                 ", message='" + message + '\'' +

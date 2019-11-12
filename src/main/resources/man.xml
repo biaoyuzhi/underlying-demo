@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<school>
+    <classes>
+        <class className="classOne">
+            <man name="zzz" age="22" message="zzz22">
+                <name>wuzh</name>
+                <age>23</age>
+                <message>call me!</message>
+            </man>
+        </class>
+    </classes>
+</school>

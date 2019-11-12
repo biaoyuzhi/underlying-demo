@@ -40,6 +40,13 @@
             <version>2.2.2</version>
         </dependency>
 
+        <!--引入Apache的commons项目中Digester项目依赖，用于将xml文件解析成Java对象-->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-digester3</artifactId>
+            <version>3.2</version>
+        </dependency>
+
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>

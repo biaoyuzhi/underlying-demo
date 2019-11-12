@@ -8,7 +8,7 @@ import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 import org.springframework.stereotype.Component;
-import pojo.Person;
+import pojo.Man;
 
 /**
  * Created by wuzh on 2019/10/8.
@@ -40,7 +40,7 @@ public class BeanFilter implements BeanFactoryPostProcessor {
 class MainTest{
     public static void main(String[] args) {
         ApplicationContext ac = new FileSystemXmlApplicationContext("classpath:bean.xml");
-        Person wuzh = (Person) ac.getBean("wuzh");
+        Man wuzh = (Man) ac.getBean("wuzh");
         System.out.println(wuzh.toString());
     }
 }
