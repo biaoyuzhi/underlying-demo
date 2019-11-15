@@ -1,5 +1,6 @@
 package controller;
 
+import jmx.HelloAgent;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -15,6 +16,7 @@ public class HelloController {
     @RequestMapping("/hello")
     public String getHello(){
         System.out.println("HelloController");
-        return "hello page!";
+        //展示当前缓存中(可通过jmx修改值)hello实例的值
+        return HelloAgent.hello.getName();
     }
 }

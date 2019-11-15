@@ -19,6 +19,8 @@ import java.rmi.registry.LocateRegistry;
  * 实现SpringMVC的WebApplicationInitializer接口，此类在servlet容器启动时加载
  */
 public class HelloAgent implements WebApplicationInitializer {
+    //将对象hello暴露出来，方便其它地方调用
+    public static Hello hello = new Hello();
 
     @Override
     public void onStartup(ServletContext servletContext) throws ServletException {
@@ -30,7 +32,7 @@ public class HelloAgent implements WebApplicationInitializer {
             MBeanServer mbs = ManagementFactory.getPlatformMBeanServer();
             String domainName = "MyMBean";
             ObjectName helloName = new ObjectName(domainName + ":name=hello");
-            mbs.registerMBean(new Hello(), helloName);
+            mbs.registerMBean(hello, helloName);
 
             // Distributed Layer, 提供了一个HtmlAdaptor。支持Http访问协议，并且有一个不错的HTML界面，这里的Hello就是用这个作为远端管理的界面
             // 事实上HtmlAdaptor是一个简单的HttpServer，它将Http请求转换为JMX Agent的请求
