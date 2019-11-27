@@ -20,6 +20,13 @@ public class MapTest {
 //        n |= n >>> 16;
 //        //上面按位操作后，n一定是2的整数次方减去1（11...11全为1）
 //        System.out.println((n < 0) ? 1 : (n >= (1 << 30)) ? (1 << 30) : n + 1);
+        int h;
+        Object k = new Object();
+        // 把hashCode的低16位和高16位进行异或处理，得到新的hashCode
+        int newHashCode =  (k == null) ? 0 : (h = k.hashCode()) ^ (h >>> 16);
+        // n为HashMap中key数组的长度，减去1后变成2进制每位都为1，再与新的hashCode进行按位与操作，能保证结果在key数组长度内
+//        tab[i = (n - 1) & newHashCode]
+
         for (int i = 3; i < 23; i++) {
             map.put(i, String.valueOf(i));
         }
@@ -66,7 +73,7 @@ public class MapTest {
         treeMap.put(8,"i");
 
         treeMap.put(7,"j");
-        Comparable k = "a";     //因为String、Integer、Character等等都实现了Comparable接口，所以可以使用多态
+        Comparable key = "a";     //因为String、Integer、Character等等都实现了Comparable接口，所以可以使用多态
         /**
          * 参考https://www.jianshu.com/p/3958a1a11cb0
          * 红黑树是一棵二叉排序树。且满足以下特点：
